@@ -1,6 +1,7 @@
------------------------------------------------------------
-TicTacToe -------------------------------------------------
------------------------------------------------------------
+------------------------------------------------------------
+TicTacToe --------------------------------------------------
+------------------------------------------------------------
+
 There's going to have to be some js plumbing that handles the updates and conversation making between the server. e.g. pings that server looking for new chat messages/moves and then applies the moves and messages to the client's page.
 
 
@@ -23,7 +24,7 @@ There's going to have to be some js plumbing that handles the updates and conver
 - Chat during game
 - See player stats
 
-Tables ====================================================
+Tables =====================================================
 
 User
   UserType
@@ -52,7 +53,8 @@ ChatMessage
   UserID
   Message
 
-Match Business Logic ======================================
+Match Business Logic =======================================
+
 - User1 submits request for match with user2
 - Request is persisted to DB 
 - User2 will recieve request as a response to his running "search for requests" functionality

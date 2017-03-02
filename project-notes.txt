@@ -1,0 +1,61 @@
+-----------------------------------------------------------
+TicTacToe -------------------------------------------------
+-----------------------------------------------------------
+There's going to have to be some js plumbing that handles the updates and conversation making between the server. e.g. pings that server looking for new chat messages/moves and then applies the moves and messages to the client's page.
+
+
++ Sign In
+  - nickname
+  - authed user
+
++ Start
+  + Play online
+    - Que for Quick Match (next open player)
+    - See other active players
+      - Be able to request a game with them
+
+  + Play local
+
+  + Play against AI
+
+  + stats
+
+- Chat during game
+- See player stats
+
+Tables ====================================================
+
+User
+  UserType
+  Username
+  Password
+  Active
+
+UserType (simple or authed)
+  UserType
+
+Game
+  Player1ID
+  Player2ID
+  WinnerID
+
+Move
+  GameID
+  DateTime
+  UserID
+  MoveNumber
+  Possition
+
+ChatMessage
+  DateTime
+  GameID
+  UserID
+  Message
+
+Match Business Logic ======================================
+- User1 submits request for match with user2
+- Request is persisted to DB 
+- User2 will recieve request as a response to his running "search for requests" functionality
+- User2 submits acceptance for request form user 1
+- User2's acceptance is persisted to DB 
+- Server set's up match and add's users to it

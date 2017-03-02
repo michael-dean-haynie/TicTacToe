@@ -53,6 +53,36 @@ ChatMessage
   UserID
   Message
 
+SQL Snippits ===============================================
+
+- Initial creation of DB
+-----
+CREATE DATABASE tictactoe;
+-----
+
+- Create application user
+-----
+CREATE USER 'tictactoe'@'%' IDENTIFIED BY 'tictactoe';
+GRANT ALL ON tictactoe.* TO 'tictactoe'@'%';
+CREATE USER 'tictactoe'@'localhost' IDENTIFIED BY 'tictactoe';
+GRANT ALL ON tictactoe.* TO 'tictactoe'@'localhost';
+-----
+
+- Create table snippet
+-----
+    DB::statement("
+      CREATE TABLE user(
+        id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        created TIMESTAMP DEFAULT NOW(), 
+        updated TIMESTAMP DEFAULT NOW() ON UPDATE NOW()
+      )
+    ;")
+-----
+
+
+
+
+
 Match Business Logic =======================================
 
 - User1 submits request for match with user2
@@ -61,3 +91,9 @@ Match Business Logic =======================================
 - User2 submits acceptance for request form user 1
 - User2's acceptance is persisted to DB 
 - Server set's up match and add's users to it
+
+
+Before I can Say I'm Done ==================================
+- Add favicon
+
+

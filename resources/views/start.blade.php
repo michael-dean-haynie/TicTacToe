@@ -1,11 +1,10 @@
-@extends("master-layout")
+@extends("layouts/master")
 
 @section('title')
 	@parent :: Start
 @stop
 
 @section('content')
-	<p>This paragraph came from start.blade.php</p>
 	<ul>
 		<li><a href="/play-online/">Play Online</a></li>
 		<li><a href="/play-local/">Play Local</a></li>

@@ -8,7 +8,7 @@
 	</title>
 </head>
 <body>
-	<p>This paragraph comes from master-layout.blade.php</p>
 	@yield('content')
+	<?php echo "<pre>" . print_r(\CustomAuth::getUser(), true) . "</pre>"; ?>
 </body>
 </html>

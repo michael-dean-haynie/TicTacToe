@@ -19,6 +19,7 @@ class CreateTables extends Migration
         created TIMESTAMP DEFAULT NOW(), 
         updated TIMESTAMP DEFAULT NOW() ON UPDATE NOW(),
         username VARCHAR(255) NOT NULL,
+        email VARCHAR(255),
         password VARCHAR(255),
         -- user_type either 'simple' or 'authed'
         user_type VARCHAR(255) NOT NULL DEFAULT 'simple'

@@ -15,11 +15,35 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-  return view('start');
+// Testing =================================================
+
+Route::get('test1', function () {
+	$var = DB::select("SELECT email FROM user WHERE user_type = 'authed';");
+	$var = array_map('Help::_pullOutEmails', $var);
+  return "<pre>" . print_r($var, true) . "</pre>";
 });
 
-Route::get('/auth', function(){
-	return view('auth/auth');
+
+Route::get('test2', function () {
+	// return \DB::select("SELECT MAX(id) FROM user;")[0]->id;
 });
 
+
+
+
+
+// Start ===================================================
+
+Route::get('/', function(){return redirect('start');});
+Route::get('start', function(){return view('start');});
+
+
+
+// Auth ====================================================
+
+Route::get('auth', "AuthController@getCreate");
+Route::post('auth', "AuthController@postCreate");
+
+Route::get('auth/login', "AuthController@getLogin");
+Route::post('auth/login', "AuthController@postLogin");
+Route::get('auth/logout', "AuthController@getLogout");

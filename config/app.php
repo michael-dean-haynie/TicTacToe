@@ -226,6 +226,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        // Custom
+        'Help' => App\Custom\CustomHelpers::class,
+        'CustomAuth' => App\Custom\CustomAuth::class,
     ],
 
 ];

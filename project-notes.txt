@@ -1,6 +1,7 @@
 ------------------------------------------------------------
 TicTacToe --------------------------------------------------
 ------------------------------------------------------------
+pu@ finding a way to explicitly map the url parameters to the action parameters [figured it out. the routing engine is smart enought to map url parameters to the action parameters with the same name. Even if they are in a different order.]
 
 There's going to have to be some js plumbing that handles the updates and conversation making between the server. e.g. pings that server looking for new chat messages/moves and then applies the moves and messages to the client's page.
 
@@ -30,7 +31,7 @@ User
   UserType
   Username
   Password
-  Active
+
 
 UserType (simple or authed)
   UserType
@@ -52,6 +53,21 @@ ChatMessage
   GameID
   UserID
   Message
+
+HTML Snippits ==============================================
+
+- Validation
+-----
+required maxlength='255'
+-----
+
+
+PHP Snippits ===============================================
+
+- Pretty print variables
+-----
+return "<pre>" . print_r($var, true) . "</pre>";
+-----
 
 SQL Snippits ===============================================
 
@@ -95,5 +111,8 @@ Match Business Logic =======================================
 
 Before I can Say I'm Done ==================================
 - Add favicon
+- Forgot password/username?
 
 
+Immediate stuff to do ======================================
+- match client validation with server for postLogin

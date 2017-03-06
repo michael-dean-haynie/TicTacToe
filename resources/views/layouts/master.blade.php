@@ -6,6 +6,13 @@
 			TicTacToe
 		@show
 	</title>
+
+	<!-- jQuery -->
+	<script src="/js/jquery-3.1.1.min.js"></script>
+
+	<!-- Custom Scripts -->
+	<script src="/js/tictactoe.js"></script>
+
 </head>
 <body>
 	@yield('content')

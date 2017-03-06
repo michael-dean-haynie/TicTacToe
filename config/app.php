@@ -229,6 +229,7 @@ return [
         // Custom
         'Help' => App\Custom\CustomHelpers::class,
         'CustomAuth' => App\Custom\CustomAuth::class,
+        'Queuing' => App\Custom\Queuing::class,
     ],
 
 ];

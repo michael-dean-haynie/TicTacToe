@@ -25,18 +25,12 @@ Route::get('test1', function () {
 
 
 Route::get('test2', function () {
-	// return \DB::select("SELECT MAX(id) FROM user;")[0]->id;
+		$id = 4;
+    $result = \DB::select("
+      SELECT * FROM `matches`
+      WHERE active = 1 AND (player1 = :id OR player2 = :id)
+    ;", ['id' => $id]);
 });
-
-
-
-
-
-// Start ===================================================
-
-Route::get('/', function(){return redirect('start');});
-Route::get('start', function(){return view('start');});
-
 
 
 // Auth ====================================================
@@ -47,3 +41,22 @@ Route::post('auth', "AuthController@postCreate");
 Route::get('auth/login', "AuthController@getLogin");
 Route::post('auth/login', "AuthController@postLogin");
 Route::get('auth/logout', "AuthController@getLogout");
+
+
+// Start ===================================================
+
+Route::get('/', function(){return redirect('start');});
+Route::get('start', 'PagesController@getStart');
+
+
+// Play ====================================================
+
+Route::get('play/online', 'PagesController@getPlayOnline');
+
+
+// Ajax ====================================================
+
+Route::get('ajax/ready-up-quickmatch', 'AjaxController@readyUpQuickmatch');
+Route::get('ajax/un-ready-up-quickmatch', 'AjaxController@un_readyUpQuickmatch');
+
+Route::get('ajax/check-for-quickmatch', 'AjaxController@checkForQuickmatch');

@@ -5,6 +5,10 @@ pu@ finding a way to explicitly map the url parameters to the action parameters 
 
 There's going to have to be some js plumbing that handles the updates and conversation making between the server. e.g. pings that server looking for new chat messages/moves and then applies the moves and messages to the client's page.
 
+-----
+To browse to on ipad had to serve like this "php -S 0.0.0.0:8888"
+Then on ipad browse to computerIP:8888 (get computerIP in cmd prompt "ipconfig" ->IPv4 Address)
+-----
 
 + Sign In
   - nickname
@@ -92,7 +96,7 @@ GRANT ALL ON tictactoe.* TO 'tictactoe'@'localhost';
         created TIMESTAMP DEFAULT NOW(), 
         updated TIMESTAMP DEFAULT NOW() ON UPDATE NOW()
       )
-    ;")
+    ;");
 -----
 
 
@@ -112,7 +116,9 @@ Match Business Logic =======================================
 Before I can Say I'm Done ==================================
 - Add favicon
 - Forgot password/username?
+- shoulc add match type field to db (qm vs selected)
+- make sure user can not log in on 2 machines at same time
 
 
 Immediate stuff to do ======================================
-- match client validation with server for postLogin
+hullo@wurld.lol auth did not work after refresh...
